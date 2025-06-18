@@ -1,0 +1,97 @@
+/**
+* @license
+*
+* Font Family: Space Grotesk
+* Designed by: Florian Karsten
+* URL: https://www.fontshare.com/fonts/space-grotesk
+* © 2025 Indian Type Foundry
+*
+* Space Grotesk Light 
+* Space Grotesk Regular 
+* Space Grotesk Medium 
+* Space Grotesk SemiBold 
+* Space Grotesk Bold 
+* Space Grotesk Variable (Variable font)
+
+*
+*/
+@font-face {
+    font-family: "Space Grotesk";
+    src: url("../../../../public/assets/fonts/SpaceGrotesk-Light.woof2")
+            format("woff2"),
+        url("../../../../public/assets/fonts/SpaceGrotesk-Light.woff")
+            format("woff"),
+        url("../../../../public/assets/fonts/SpaceGrotesk-Light.ttf")
+            format("truetype");
+    font-weight: 300;
+
+    font-style: normal;
+}
+@font-face {
+    font-family: "Space Grotesk";
+    src: url("../../../../public/assets/fonts/space-grotesk/SpaceGrotesk-Light.woff2")
+            format("woff2"),
+        url("../../../../public/assets/fonts/space-grotesk/SpaceGrotesk-Regular.woff")
+            format("woff"),
+        url("../../../../public/assets/fonts/space-grotesk/SpaceGrotesk-Regular.ttf")
+            format("truetype");
+    font-weight: 400;
+
+    font-style: normal;
+}
+@font-face {
+    font-family: "Space Grotesk";
+    src: url("../../../../public/assets/fonts/space-grotesk/SpaceGrotesk-Medium.woff2")
+            format("woff2"),
+        url("../../../../public/assets/fonts/space-grotesk/SpaceGrotesk-Medium.woff")
+            format("woff"),
+        url("../../../../public/assets/fonts/space-grotesk/SpaceGrotesk-Medium.ttf")
+            format("truetype");
+    font-weight: 500;
+
+    font-style: normal;
+}
+@font-face {
+    font-family: "Space Grotesk";
+    src: url("../../../../public/assets/fonts/space-grotesk/SpaceGrotesk-SemiBold.woff2")
+            format("woff2"),
+        url("../../../../public/assets/fonts/space-grotesk/SpaceGrotesk-SemiBold.woff")
+            format("woff"),
+        url("../../../../public/assets/fonts/space-grotesk/SpaceGrotesk-SemiBold.ttf")
+            format("truetype");
+    font-weight: 600;
+
+    font-style: normal;
+}
+@font-face {
+    font-family: "Space Grotesk";
+    src: url("../../../../public/assets/fonts/space-grotesk/SpaceGrotesk-Bold.woff2")
+            format("woff2"),
+        url("../../../../public/assets/fonts/space-grotesk/SpaceGrotesk-Bold.woff")
+            format("woff"),
+        url("../../../../public/assets/fonts/space-grotesk/SpaceGrotesk-Bold.ttf")
+            format("truetype");
+    font-weight: 700;
+
+    font-style: normal;
+}
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 300.0;
+*
+* available axes:
+'wght' (range from 300.0 to 700.0
+*/
+@font-face {
+    font-family: "Space Grotesk";
+    src: url("../../../../public/assets/fonts/space-grotesk/SpaceGrotesk-Variable.woff2")
+            format("woff2"),
+        url("../../../../public/assets/fonts/space-grotesk/SpaceGrotesk-Variable.woff")
+            format("woff"),
+        url("../../../../public/assets/fonts/space-grotesk/SpaceGrotesk-Variable.ttf")
+            format("truetype");
+    font-weight: 300 700;
+
+    font-style: normal;
+}

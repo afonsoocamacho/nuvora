@@ -1,0 +1,141 @@
+/* Reset default browser styles */
+
+/* Box sizing rules */
+/* Applies `box-sizing: border-box` to all elements, pseudo-elements, 
+   and their `::before` and `::after` pseudo-elements. 
+   This ensures padding and border are included in the element's total width and height. */
+*,
+*::before,
+*::after {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box;
+    /*  cursor: none;*/
+}
+
+/* Prevent font size inflation */
+/* Disables automatic text size adjustments in browsers like Firefox and WebKit-based browsers (e.g., Safari and Chrome).
+         This ensures text sizes remain consistent across devices. */
+html {
+    -moz-text-size-adjust: none; /* Firefox-specific */
+    -webkit-text-size-adjust: none; /* WebKit-specific */
+    text-size-adjust: none; /* General property */
+}
+
+/* Remove default margin */
+/* Removes default bottom margin from body, headings, paragraphs, figures, blockquotes, 
+         description lists, and description terms to allow for precise control using custom styles. */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin-block-end: 0; /* Reset the bottom margin */
+}
+
+/* Remove list styles */
+/* Removes bullet points and numbering for `ul` and `ol` elements that explicitly use the `role='list'` attribute. 
+         This ensures no default styling is applied if the developer intends custom styles. */
+ul[role="list"],
+ol[role="list"] {
+    list-style: none; /* Removes default list indicators */
+}
+
+/* Set core body defaults */
+/* Ensures the body occupies at least the full height of the viewport (`100vh`).
+         Sets a default line height of `1.5` for better text readability. */
+body {
+    min-height: 100vh; /* Full viewport height */
+    line-height: 1.5; /* Comfortable text spacing */
+}
+
+/* Set shorter line heights */
+/* Adjusts the line height for headings and interactive elements to make them more compact and visually distinct. */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+    line-height: 1.1; /* Compact line spacing */
+}
+
+/* Balance text wrapping */
+/* Enables balanced wrapping for headings to make them visually more even and consistent in layout. */
+h1,
+h2,
+h3,
+h4 {
+    overflow-wrap: break-word; /* Balances text wrapping */
+}
+
+/* Default styles for links */
+/* Unstyled anchor (`<a>`) elements without a class get basic styles: 
+         - `text-decoration-skip-ink: auto` ensures underlines skip through descenders (like 'g' or 'y') for a cleaner look.
+         - `color: currentColor` matches the current text color for consistency. */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+}
+
+/* Improve image handling */
+/* Ensures images and `<picture>` elements:
+         - Do not exceed their container width.
+         - Use block layout by default (avoiding inline spacing issues). */
+img,
+picture {
+    max-width: 100%; /* Constrains to container width */
+    display: block; /* Removes inline behavior */
+}
+
+/* Inherit fonts for form controls */
+/* Ensures buttons, inputs, textareas, and select elements inherit 
+         the font family and size of their parent, making them consistent with the surrounding text. */
+input,
+button,
+textarea,
+select {
+    font-family: inherit; /* Use parent font */
+    font-size: inherit; /* Use parent font size */
+}
+
+/* Reset button styles */
+/* Removes all default styles from button elements, allowing developers to style them from scratch.
+         This includes removing background, border, padding, and other browser-specific styles. */
+button {
+    all: unset; /* Resets all styles to default */
+    cursor: pointer; /* Ensures the button has a pointer cursor */
+}
+
+/* Ensure reasonable height for textareas */
+/* Sets a minimum height for `<textarea>` elements that don't have the `rows` attribute,
+         preventing them from being too small. */
+textarea:not([rows]) {
+    min-height: 10em; /* Minimum height of 10 lines */
+}
+
+/* Add scroll margin for anchored elements */
+/* Adds extra margin at the top of the viewport when navigating to an element via an anchor link (e.g., `#section`). */
+:target {
+    scroll-margin-block: 5ex; /* Adds spacing for better visibility */
+}
+
+/* Resets the default margin and padding on the body element to ensure consistent spacing across browsers. */
+
+body {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    /* cursor: none; /* Hide the default cursor */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ---------------------------------- */

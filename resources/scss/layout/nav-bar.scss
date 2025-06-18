@@ -1,0 +1,42 @@
+nav {
+    height: 72px;
+    width: 100%;
+    padding: 10px 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-white);
+    .logo {
+        display: flex;
+        align-items: center;
+        height: 31px;
+        .svg {
+            height: 31px;
+            color: black;
+        }
+    }
+    .nav-links {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        font-size: 16px;
+        font-weight: var(--font-weight-medium);
+        color: var(--color-black);
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: var(--color-primary);
+            }
+        }
+    }
+    .nav-actions {
+        display: flex;
+        align-items: right;
+        gap: 24px;
+    }
+}

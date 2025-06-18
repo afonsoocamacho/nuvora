@@ -1,0 +1,60 @@
+/* Setting Variables */
+
+:root {
+    /* Font Families */
+    --font-family-primary: "Space Grotesk", sans-serif; /* Primary Font */
+
+    /* Font Weights */
+    --font-weight-thin: 100;
+    --font-weight-extra-light: 200;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semi-bold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extra-bold: 800;
+    --font-weight-black: 900;
+
+    /* Base Colors */
+    --color-primary: #c3fe32; /* Core Lime */
+    --color-secondary: #1cb2f7; /* Security Blue */
+    --color-accent: #9747ff; /* System Violet */
+    --color-white: #ffffff; /* Zero White */
+    --color-black: #000000; /* Command Black */
+
+    /* Semantic Colors */
+    --color-success: #54de62; /* Success Green */
+    --color-warning: #ffdb00; /* Warning Yellow */
+    --color-error: #fe691c; /* Error Red */
+    --color-info: #9747ff; /* Info Violet */
+
+    /* Grayscale (Tints of Black / Shades of White) */
+    --gray-0: #ffffff;
+    --gray-10: #e6e6e6;
+    --gray-20: #cccccc;
+    --gray-30: #b3b3b3;
+    --gray-40: #999999;
+    --gray-50: #808080;
+    --gray-60: #666666;
+    --gray-70: #4c4c4c;
+    --gray-80: #333333;
+    --gray-90: #191919;
+    --gray-100: #000000;
+}
+
+/* ---------------------------------- */
+.green {
+    color: var(--color-primary);
+}
+.blue {
+    color: var(--color-secondary);
+}
+.purple {
+    color: var(--color-accent);
+}
+.black {
+    color: var(--color-black);
+}
+.white {
+    color: var(--color-white);
+}
