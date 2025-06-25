@@ -11,19 +11,18 @@
                     <h1 class="title">Welcome to Nuvora!</h1>
                     <p class="subtitle">Let's create an account.</p>
                 </div>
-                <form class="auth-form" action="POST">
+                <form class="auth-form" method="POST" action="{{ route('register') }}">
                     @csrf
+
+                    <x-input-field type="text" name="name" label="Organization Name" placeholder="Your Organization" />
+
                     <x-input-field type="email" name="email" label="Email" placeholder="joe@nuvora.com" />
 
 
 
+                    <x-password-field name="password" label="Create Password" :create="true" />
 
-
-                    <x-create-password name="password" label="Create Password" />
-
-                    <x-input-field type="password" name="confirm-password" label="Confirm Password"
-                        placeholder="· · · · · · · · " />
-
+                    <x-password-field name="password_confirmation" label="Confirm Password" />
 
 
 

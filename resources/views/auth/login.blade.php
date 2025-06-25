@@ -6,12 +6,16 @@
 @section('content')
     <section class="login-page">
         <div class="half-page">
-            <div class="auth-form-container">
-                <h1 class="title">Welcome back!</h1>
-                <form class="auth-form" action="POST">
+            <div class="auth-form-container auth-form-container-login">
+                <div class="auth-form-header">
+                    <h1 class="title">Welcome back!</h1>
+                </div>
+
+                <form class="auth-form" method="POST" action="{{ route('login') }}">
+                    {{-- Display validation errors --}}
                     @csrf
                     <x-input-field type="email" name="email" label="Email" placeholder="joe@nuvora.com" />
-                    <x-input-field type="password" name="password" label="Password" placeholder="********" />
+                    <x-password-field name="password" label="Password" />
 
                     <div class="remember-forgot">
                         <div class="remember-me">

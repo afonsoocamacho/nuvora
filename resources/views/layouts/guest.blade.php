@@ -70,10 +70,13 @@
 
     <!-- Alpine Scripts -->
     <script>
-        function createPasswordField() {
+        function createPasswordField({
+            create = false
+        }) {
             return {
-                show: false,
                 password: '',
+                show: false,
+                create,
                 rules: {
                     length: false,
                     upper: false,
@@ -81,13 +84,12 @@
                     symbol: false,
                 },
                 validateNewPassword() {
-                    const val = this.password;
-                    this.rules.length = val.length >= 8;
-                    this.rules.upper = /[A-Z]/.test(val);
-                    this.rules.number = /[0-9]/.test(val);
-                    this.rules.symbol = /[!@#$%^&*(),.?":{}|<>]/.test(val);
-                }
-            }
+                    this.rules.length = this.password.length >= 8;
+                    this.rules.upper = /[A-Z]/.test(this.password);
+                    this.rules.number = /\d/.test(this.password);
+                    this.rules.symbol = /[^A-Za-z0-9]/.test(this.password);
+                },
+            };
         }
     </script>
 

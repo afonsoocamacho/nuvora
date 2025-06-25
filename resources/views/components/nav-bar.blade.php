@@ -1,7 +1,10 @@
 <nav>
-    <div class="logo"><x-icon name="wordmark" class="black" style="height: 24px;" /></div>
+    <div class="logo">
+        <a href="{{ route('home') }}" style="cursor: pointer, "><x-icon name="wordmark" class="black"
+                style="height: 24px;" /></a>
+    </div>
 
-    {{-- ToDo: Fix the routes and add logo --}}
+    {{-- ToDo: Fix the routes --}}
 
     <ul class="nav-links">
         <li><a href="{{ route('home') }}">Home</a></li>

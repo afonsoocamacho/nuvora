@@ -11,11 +11,15 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
-Route::get('/login', function(){
-    return view('auth.login');
-})->name('login');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
 
-Route::get('/register', function(){
+// Route::get('/login', function () {
+//     return view('auth.login');
+// })->name('login');
+
+Route::get('/register', function () {
     return view('auth.signup');
 })->name('register');
 

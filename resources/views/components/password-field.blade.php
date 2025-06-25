@@ -2,9 +2,10 @@
     'name' => 'password',
     'label' => 'Password',
     'required' => false,
+    'create' => false,
 ])
 
-<div x-data="createPasswordField()" class="form-group">
+<div x-data="createPasswordField({ create: {{ $create ? 'true' : 'false' }} })" class="form-group">
     <label for="{{ $name }}" class="input-label">
         {{ $label }}
         @if ($required)
@@ -14,6 +15,7 @@
 
     <div class="input-wrapper">
         <span class="input-icon-left">
+            <!-- Lock Icon -->
             <svg xmlns="http://www.w3.org/2000/svg" class="icon-lock" fill="none" viewBox="0 0 24 24">
                 <path stroke="currentColor" stroke-width="2"
                     d="M12 17v1m-5-6V9a5 5 0 0110 0v3m-10 0h10a2 2 0 012 2v6a2 2 0 01-2 2H7a2 2 0 01-2-2v-6a2 2 0 012-2z" />
@@ -21,8 +23,9 @@
         </span>
 
         <input :type="show ? 'text' : 'password'" id="{{ $name }}" name="{{ $name }}"
-            class="input-field input-field-create-password" x-model="password" @input="validateNewPassword"
-            placeholder="· · · · · · · ·" {{ $required ? 'required' : '' }}>
+            class="input-field input-field-create-password" x-model="password"
+            :placeholder="create ? 'Create a password' : 'Enter your password'" @input="create && validateNewPassword()"
+            {{ $required ? 'required' : '' }}>
 
         <button type="button" class="input-icon-right" @click="show = !show">
             <svg x-show="!show" xmlns="http://www.w3.org/2000/svg" class="icon-eye" fill="none" viewBox="0 0 24 24">
@@ -38,14 +41,22 @@
         </button>
     </div>
 
-    <!-- "Start typing..." message -->
-    <p x-show="password.length === 0" class="start-typing-message">Start typing...</p>
+    <!-- Live Feedback (Only for Create) -->
+    <template x-if="create">
+        <div>
+            <p x-show="password.length === 0" class="start-typing-message">Start typing...</p>
+            <ul class="password-rules" x-show="password.length > 0">
+                <li :class="{ 'valid': rules.length }">At least 8 characters</li>
+                <li :class="{ 'valid': rules.upper }">One uppercase letter</li>
+                <li :class="{ 'valid': rules.number }">One number</li>
+                <li :class="{ 'valid': rules.symbol }">One special character</li>
+            </ul>
+        </div>
+    </template>
 
-    <!-- Live password rules -->
-    <ul class="password-rules" x-show="password.length > 0">
-        <li :class="{ 'valid': rules.length }">At least 8 characters</li>
-        <li :class="{ 'valid': rules.upper }">One uppercase letter</li>
-        <li :class="{ 'valid': rules.number }">One number</li>
-        <li :class="{ 'valid': rules.symbol }">One special character</li>
-    </ul>
+    @error($name)
+        <p class="error-message">{{ $message }}</p>
+    @enderror
+
+
 </div>
