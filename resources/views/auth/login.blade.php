@@ -20,7 +20,7 @@
                     <div class="remember-forgot">
                         <div class="remember-me">
                             <label class="checkbox-remember">
-                                <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}
+                                <input id="remember" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}
                                     class="checkbox-input">
                                 <span class="checkbox-custom">
                                     <svg viewBox="0 0 24 24" class="checkmark" aria-hidden="true">

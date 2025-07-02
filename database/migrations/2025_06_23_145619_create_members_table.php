@@ -19,6 +19,9 @@ return new class extends Migration
             $table->foreignId('member_type_id')->nullable()->constrained()->nullOnDelete();
             $table->foreignId('country_id')->nullable()->constrained()->nullOnDelete();
 
+            // Unique identifier
+            $table->string('card_number')->unique()->nullable();
+
             // Identity
             $table->string('first_name');
             $table->string('last_name');
@@ -67,7 +70,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('member_type', function (Blueprint $table) {
+        Schema::create('member_types', function (Blueprint $table) {
             $table->id();
             $table->foreignId('organization_id')->constrained()->onDelete('cascade');
             $table->string('name')->unique();

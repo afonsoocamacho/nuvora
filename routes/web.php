@@ -4,24 +4,63 @@ use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpKernel\Event\ViewEvent;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/home', function () {
     return view('home');
 })->name('home');
 
-Route::get('/dashboard', function () {
+Route::get('/memberships', function () {
     return view('dashboard');
-})->name('dashboard');
+})->name('memberships');
 
-// Route::get('/login', function () {
-//     return view('auth.login');
-// })->name('login');
+Route::get('/payments', function () {
+    return view('dashboard');
+})->name('payments');
 
-Route::get('/register', function () {
-    return view('auth.signup');
-})->name('register');
+Route::get('/events', function () {
+    return view('dashboard');
+})->name('events');
+
+Route::get('/communication', function () {
+    return view('dashboard');
+})->name('communication');
+
+Route::get('/trash', function () {
+    return view('dashboard');
+})->name('trash');
+
+Route::get('/settings', function () {
+    return view('dashboard');
+})->name('settings');
+
+Route::get('/profile', function () {
+    return view('dashboard');
+})->name('profile');
+
+Route::get('/help-center', function () {
+    return view('dashboard');
+})->name('help-center');
+
+
+
+
+// Protected routes that require authentication
+Route::middleware(['auth'])->group(function () {
+
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::get('/members', function () {
+        return view('members');
+    })->name('members');
+
+    // Add more authenticated routes here
+});
+
+
 
 Route::view('/privacy-policy', 'legal.privacy')->name('privacy');
 Route::view('/terms-of-use', 'legal.terms')->name('terms');

@@ -1,0 +1,45 @@
+.pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+
+    .pagination {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+
+        li {
+            list-style: none;
+
+            a,
+            span {
+                display: inline-block;
+                padding: 0.5rem 1rem;
+                font-size: 14px;
+                border: 1px solid #000;
+                color: #000;
+                border-radius: 8px;
+                background-color: #fff;
+                text-decoration: none;
+                transition: all 0.2s ease-in-out;
+
+                &:hover {
+                    background-color: #000;
+                    color: #fff;
+                }
+            }
+
+            &.active span {
+                background-color: #c3fe32; // Core Lime
+                color: #000;
+                border-color: #c3fe32;
+                font-weight: bold;
+            }
+
+            &.disabled span {
+                opacity: 0.4;
+                cursor: not-allowed;
+            }
+        }
+    }
+}

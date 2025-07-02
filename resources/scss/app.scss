@@ -12,16 +12,22 @@
 
 // Components
 @use "components/auth-form-container.scss" as *;
+@use "components/pagination" as *;
 
 // Layout
-@use "layout/nav-bar" as *;
+@use "layouts/nav-bar" as *;
+@use "layouts/footer.scss" as *;
 
 //Inputs/forms
 @use "base/inputs/input-field" as *;
 @use "base/inputs/checkbox-tag" as *;
 @use "base/inputs/create-password" as *;
 
+// Inputs/Search Bar
+@use "base/inputs/search-bar" as *;
+
 //pages
 @use "pages/login" as *;
 @use "pages/signup" as *;
 @use "pages/legal-pages" as *;
+@use "pages/members-page" as *;

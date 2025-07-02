@@ -14,17 +14,33 @@ body {
     transition: background 0.2s ease-in-out;
     color: var(--color-black);
     border-radius: 5px;
-    font-weight: var(--font-weight-semi-bold);
+    font-weight: var(--font-weight-medium);
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: fit-content;
 
     &:hover {
         opacity: 0.9;
     }
+
+    svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+.btn-xxsm {
+    padding: 4px 10px;
+    font-size: 14px;
+    line-height: 16px;
+    gap: 4px;
 }
 .btn-xsm {
     padding: 6px 14px;
     font-size: 14px;
     line-height: 18px;
+    gap: 8px;
 }
 .btn-md {
     padding: 14px;
@@ -38,6 +54,10 @@ body {
 }
 .btn-2-green {
     border: solid 2px var(--color-primary);
+    background-color: var(--color-white);
+}
+.btn-2-black {
+    border: solid 1px var(--color-black);
     background-color: var(--color-white);
 }
 
@@ -178,6 +198,11 @@ p {
     height: 1px;
     background-color: #d9d9d9;
 }
+.divider-v {
+    min-width: 1px;
+    height: 100%;
+    background-color: var(--color-gray-90);
+}
 
 /* ---------------------------------- */
 /* TESTS */
@@ -218,4 +243,56 @@ p {
         background: linear-gradient(120deg, #9ca3af, #d1d5db, #9ca3af);
         background-size: 200% 200%;
     }
+}
+
+.fw-thin {
+    font-weight: var(--font-weight-thin);
+}
+.fw-extralight {
+    font-weight: var(--font-weight-extra-light);
+}
+.fw-light {
+    font-weight: var(--font-weight-light);
+}
+.fw-regular {
+    font-weight: var(--font-weight-regular);
+}
+.fw-medium {
+    font-weight: var(--font-weight-medium);
+}
+.fw-semibold {
+    font-weight: var(--font-weight-semi-bold);
+}
+.fw-bold {
+    font-weight: var(--font-weight-bold);
+}
+.fw-extrabold {
+    font-weight: var(--font-weight-extra-bold);
+}
+.fw-black {
+    font-weight: var(--font-weight-black);
+}
+
+/* ---------------------------------- */
+.label-gray-s {
+    color: var(--color-gray-90);
+    background-color: var(--color-gray-30);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ---------------------------------- */
+.search-bar {
+}
+
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+main {
+    min-height: calc(100vh - 72px); /* Adjust for the height of the nav bar */
+}
+
+.border-l-1 {
+    border-left: 1px solid var(--color-gray-30);
 }

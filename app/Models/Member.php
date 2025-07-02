@@ -20,6 +20,7 @@ class Member extends Model
         'organization_id',
         'member_type_id',
         'country_id',
+        'card_number',
         'first_name',
         'last_name',
         'email',
@@ -70,5 +71,11 @@ class Member extends Model
     public function memberType()
     {
         return $this->belongsTo(MemberType::class);
+    }
+    public function activeMembership()
+    {
+        return $this->hasOne(MemberMembership::class)
+            ->where('status', 'active')
+            ->orderByDesc('start_at'); // latest active, just in case
     }
 }

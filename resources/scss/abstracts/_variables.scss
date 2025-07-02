@@ -31,18 +31,19 @@
     --color-error: #fe691c; /* Error Red */
     --color-info: #9747ff; /* Info Violet */
 
-    /* Grayscale (Tints of Black / Shades of White) */
-    --gray-0: #ffffff;
-    --gray-10: #e6e6e6;
-    --gray-20: #cccccc;
-    --gray-30: #b3b3b3;
-    --gray-40: #999999;
-    --gray-50: #808080;
-    --gray-60: #666666;
-    --gray-70: #4c4c4c;
-    --gray-80: #333333;
-    --gray-90: #191919;
-    --gray-100: #000000;
+    /* Grayscale */
+    --color-gray-0: #fafaf9;
+    --color-gray-10: #f1f0ef;
+    --color-gray-20: #e7e5e4;
+    --color-gray-30: #d6d3d1;
+    --color-gray-40: #a8a29e;
+    --color-gray-50: #78716c;
+    --color-gray-60: #57534e;
+    --color-gray-70: #44403c;
+    --color-gray-80: #292524;
+    --color-gray-90: #1c1917;
+    --color-gray-100: #111827;
+    --color-gray-110: #0f0f0f;
 }
 
 /* ---------------------------------- */
@@ -60,4 +61,7 @@
 }
 .white {
     color: var(--color-white);
+}
+.red {
+    color: var(--color-error);
 }

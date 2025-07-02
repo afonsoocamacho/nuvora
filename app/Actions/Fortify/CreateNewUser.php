@@ -30,6 +30,7 @@ class CreateNewUser implements CreatesNewUsers
                 Rule::unique(Organization::class),
             ],
             'password' => $this->passwordRules(),
+
         ])->validate();
 
         return Organization::create([

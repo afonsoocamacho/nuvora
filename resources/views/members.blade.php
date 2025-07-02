@@ -16,7 +16,12 @@
 
 
 @section('content')
-    <h1>Dashboard</h1>
+
+    <h1>Your Members</h1>
+
+    <livewire:member-table />
+
+
 @endsection
 
 
