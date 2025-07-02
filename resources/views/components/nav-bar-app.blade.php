@@ -51,8 +51,25 @@
             <ul>
                 <a href="#">
                     <li>
-                        <span>My Organization</span>
+                        <span>Profile</span>
 
+                    </li>
+                </a>
+                <a href="#">
+                    <li>
+                        <span>Subscription</span>
+
+                    </li>
+                </a>
+                <a href="#">
+                    <li>
+                        <span>Settings</span>
+
+                    </li>
+                </a>
+                <a href="#">
+                    <li>
+                        <span>Help Center</span>
                     </li>
                 </a>
                 <form method="POST" action="{{ route('logout') }}">
