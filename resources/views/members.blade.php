@@ -17,14 +17,60 @@
 
 @section('content')
 
-    <h1>Your Members</h1>
+    @php
+        $members = auth()
+            ->user()
+            ->members()
+            ->with(['memberType', 'activeMembership.membership'])
+            ->get();
+        $totalMembers = $members->count();
+        $membersStatus = [
+            'active' => $members->where('status', 'active')->count(),
+            'inactive' => $members->where('status', 'inactive')->count(),
+            'banned' => $members->where('status', 'banned')->count(),
+        ];
+        $newMembersThisMonth = $members->where('joined_at', '>=', now()->startOfMonth())->count();
+    @endphp
+    <section class="members-page">
+        <h1>Your Members</h1>
+        <section class="stats-cards">
+            <div class="stats-card">
+                <h2>Total Members</h2>
+                <p class="stats-value">{{ $totalMembers }}</p>
+            </div>
+            <div class="stats-card">
+                <h2>Members Status</h2>
+                @foreach ($membersStatus as $memberStat => $count)
+                    <div class="status-item">
+                        <span class="status-label">{{ ucfirst($memberStat) }}:</span>
+                        <span class="status-count">{{ $count }}</span>
+                    </div>
+                @endforeach
 
-    <livewire:member-table />
+            </div>
+            <div class="stats-card">
+                <h2>New Members This Month</h2>
+                <p class="stats-value">{{ $newMembersThisMonth }}</p>
+            </div>
+
+        </section>
 
 
+        <livewire:member-table />
+
+    </section>
 @endsection
 
 
 @push('scripts')
     <!-- Page-specific JS if needed -->
+
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if ((event.ctrlKey || event.metaKey) && event.key === 'k') {
+                event.preventDefault();
+                document.getElementById('member-search-bar').focus();
+            }
+        });
+    </script>
 @endpush

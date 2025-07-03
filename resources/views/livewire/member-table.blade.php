@@ -10,7 +10,7 @@
 
 
                     <input type="text" wire:model.live.debounce.300ms="search" class="search-input p-small"
-                        placeholder="Search by name, email, or card number">
+                        placeholder="Search by name, email, or card number" id="member-search-bar">
 
                 </div>
 
@@ -55,9 +55,9 @@
                 <th>
                     <label class="checkbox">
                         <input type="checkbox" value="" class="checkbox-input">
-                        <span class="checkbox-custom">
+                        <span class="checkbox-custom green">
                             <svg viewBox="0 0 24 24" class="checkmark" aria-hidden="true">
-                                <path d="M5 12l5 5L20 7" stroke="white" stroke-width="3" fill="none" />
+                                <path d="M5 12l5 5L20 7" stroke="black" stroke-width="3" fill="none" />
                             </svg>
                         </span>
                     </label>
