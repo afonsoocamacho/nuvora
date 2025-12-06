@@ -7,6 +7,7 @@
     'placeholder' => '',
     'required' => false,
     'icon' => null,
+    'datepicker' => false,
     'verifying' => false,
     'disabled' => false,
 ])
@@ -15,7 +16,8 @@
     $hasError = $errors->has($name);
 @endphp
 
-<div class="form-group {{ $disabled ? 'is-disabled' : '' }} {{ $hasError ? 'has-error' : '' }} {{ $verifying ? 'is-verifying' : '' }}">
+<div
+    class="form-group {{ $disabled ? 'is-disabled' : '' }} {{ $hasError ? 'has-error' : '' }} {{ $verifying ? 'is-verifying' : '' }}">
     <label for="{{ $name }}">
         {{ $label }}
         @if ($required)
@@ -28,16 +30,10 @@
             <span class="icon">{!! $icon !!}</span>
         @endif
 
-        <input
-            id="{{ $name }}"
-            name="{{ $name }}"
-            type="{{ $type }}"
-            placeholder="{{ $placeholder }}"
-            value="{{ old($name) }}"
-            {{ $required ? 'required' : '' }}
-            {{ $disabled ? 'disabled' : '' }}
-            class="input-field"
-        >
+        <input @if ($datepicker === true) id="datepicker" @else id="{{ $name }}" @endif
+            name="{{ $name }}" type="{{ $type }}" placeholder="{{ $placeholder }}"
+            value="{{ old($name) }}" {{ $required ? 'required' : '' }} {{ $disabled ? 'disabled' : '' }}
+            @if ($datepicker === true) class="datepicker input-field" @else class="input-field" @endif>
     </div>
 
     @if ($verifying)

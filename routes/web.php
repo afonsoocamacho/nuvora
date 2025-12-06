@@ -54,8 +54,10 @@ Route::middleware(['auth'])->group(function () {
     })->name('dashboard');
 
     Route::get('/members', function () {
-        return view('members');
+        return view('members.index');
     })->name('members');
+
+    Route::get('/members/create', [App\Http\Controllers\MemberController::class, 'create'])->name('members.create');
 
     // Add more authenticated routes here
 });

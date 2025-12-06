@@ -43,10 +43,10 @@
 
         </section>
 
-        <button class="btn btn-1-green btn-xsm">
+        <a href="{{ route('members.create') }}" class="btn btn-1-green btn-xsm">
             <x-icon name="plus" class="icon" />
             Add Member
-        </button>
+        </a>
     </header>
 
     <table>

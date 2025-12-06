@@ -32,6 +32,7 @@
             font-weight: var(--font-weight-regular);
             line-height: 20px;
             color: var(--color-gray-70);
+            caret-color: var(--color-primary);
 
             &::placeholder {
                 color: var(--color-gray-40);

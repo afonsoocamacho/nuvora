@@ -32,25 +32,27 @@
         $newMembersThisMonth = $members->where('joined_at', '>=', now()->startOfMonth())->count();
     @endphp
     <section class="members-page">
-        <h1>Your Members</h1>
+        <h1>Our Members</h1>
         <section class="stats-cards">
             <div class="stats-card">
-                <h2>Total Members</h2>
+
                 <p class="stats-value">{{ $totalMembers }}</p>
+                <h2 class="stats-title">Total Members</h2>
             </div>
             <div class="stats-card">
-                <h2>Members Status</h2>
+
                 @foreach ($membersStatus as $memberStat => $count)
                     <div class="status-item">
                         <span class="status-label">{{ ucfirst($memberStat) }}:</span>
                         <span class="status-count">{{ $count }}</span>
                     </div>
                 @endforeach
-
+                <h2 class="stats-title">Members Status</h2>
             </div>
             <div class="stats-card">
-                <h2>New Members This Month</h2>
+
                 <p class="stats-value">{{ $newMembersThisMonth }}</p>
+                <h2 class="stats-title">New Members This Month</h2>
             </div>
 
         </section>

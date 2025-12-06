@@ -1,3 +1,35 @@
 .members-page {
     padding: 20px;
+    .stats-cards {
+        background-color: var(--color-black);
+        width: fit-content;
+        padding: 12px;
+        border-radius: 12px;
+        margin-bottom: 24px;
+        display: flex;
+        gap: 12px;
+
+        .stats-card {
+            border-radius: 8px;
+            padding: 16px;
+            background-color: var(--color-gray-0);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            .stats-title {
+                font-size: 20px;
+                line-height: 28px;
+                font-weight: 400;
+                color: var(--color-black);
+            }
+            .stats-value {
+                font-size: 32px;
+                line-height: 40px;
+                font-weight: 800;
+                color: var(--color-black);
+            }
+        }
+    }
 }

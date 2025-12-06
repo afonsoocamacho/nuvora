@@ -51,9 +51,13 @@
     <!-- Additional page-specific styles -->
     @stack('styles')
 
+    <!-- Calendar Pikaday -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+
     <!-- Livewire styles -->
     @livewireStyles
-
+    <!-- Livewire scripts & config -->
     @livewireScripts
     @livewireScriptConfig
 
@@ -130,6 +134,26 @@
                 attributes: true,
                 attributeFilter: ['class']
             });
+        });
+
+        // Initialize Pikaday date picker
+        const picker = new Pikaday({
+            field: document.getElementById('datepicker'),
+            format: 'DD/MM/YYYY', // what the user sees
+            toString(date, format) {
+                // Format for visible input
+                const day = String(date.getDate()).padStart(2, '0');
+                const month = String(date.getMonth() + 1).padStart(2, '0');
+                const year = date.getFullYear();
+                return `${day}/${month}/${year}`;
+            },
+            onSelect: function(date) {
+                // Format for the hidden input (what gets submitted)
+                const yyyy = date.getFullYear();
+                const mm = String(date.getMonth() + 1).padStart(2, '0');
+                const dd = String(date.getDate()).padStart(2, '0');
+                document.getElementById('formatted-date').value = `${yyyy}-${mm}-${dd}`;
+            }
         });
     </script>
 
